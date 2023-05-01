@@ -39,6 +39,7 @@ file_contents as (
     where repo_name in (
         select repo_name from {{ ref("stg_repos__last_updated") }}
     )
+    and files.ref = "refs/heads/master"
 
 ),
 

@@ -14,7 +14,29 @@ models:
     description: This model joins the files and contents tables with their last updated date
     columns:
       - name: repo_name
-        description: Repository name (Primary key)
+        description: Repository name
+        tests:
+          - not_null
+      - name: last_updated
+        description: Last updated date
+        tests:
+          - not_null
+      - name: path
+        description: File path inside the repository
+        tests:
+          - not_null
+      - name: content
+        description: File content
+      - name: binary
+        description: Whether the file is a binary
+        tests:
+          - not_null
+
+  - name: sample_repos__file_contents_last_updated
+    description: Sample of the repos__file_contents_last_updated table
+    columns:
+      - name: repo_name
+        description: Repository name
         tests:
           - not_null
       - name: last_updated
