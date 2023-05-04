@@ -35,6 +35,11 @@ models:
   - name: sample_repos__file_contents_last_updated
     description: Sample of the repos__file_contents_last_updated table
     columns:
+      - name: file_id
+        description: Unique file ID
+        tests:
+          - unique
+          - not_null
       - name: repo_name
         description: Repository name
         tests:

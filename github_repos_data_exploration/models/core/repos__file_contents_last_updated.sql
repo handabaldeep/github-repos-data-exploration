@@ -1,7 +1,7 @@
 {{ 
     config(
         materialized='incremental',
-        unique_key='last_updated'
+        unique_key='file_id'
     ) 
 }}
 
@@ -30,7 +30,8 @@ file_contents as (
         contents.content as content, 
         contents.binary as binary, 
         files.path as path, 
-        files.repo_name as repo_name
+        files.repo_name as repo_name,
+        files.id as file_id
 
     from files
     inner join contents
@@ -45,7 +46,8 @@ file_contents as (
 
 repos_file_contents as (
 
-    select 
+    select
+        file_contents.file_id as file_id,
         file_contents.repo_name as repo_name, 
         repos.last_updated as last_updated,
         file_contents.path as path,

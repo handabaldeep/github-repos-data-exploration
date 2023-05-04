@@ -5,7 +5,7 @@ are updated with their latest updated date. */
 {{ 
     config(
         materialized='incremental',
-        unique_key='last_updated'
+        unique_key='repo_name'
     ) 
 }}
 
