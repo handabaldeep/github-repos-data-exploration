@@ -1,7 +1,7 @@
 {{ 
     config(
         materialized='incremental',
-        unique_key='file_id'
+        unique_key=['file_id', 'repo_name', 'path']
     ) 
 }}
 
