@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: staging
+    database: bigquery-public-data
+    schema: github_repos
+
+    tables:
+      - name: languages
+      - name: commits
+
+models:
+  - name: stg_repos__python
+    description: This model gets all Python repositories in the dataset
+    columns:
+      - name: repo_name
+        description: Repository name (Primary key)
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_repos__last_updated
+    description: This model gets the last_updated date for each Python repository
+    columns:
+      - name: repo_name
+        description: Repository name (Primary key)
+        tests:
+          - unique
+          - not_null
+      - name: last_updated
+        description: Last updated (timestamp converted to date)
+        tests:
+          - not_null
