@@ -10,6 +10,7 @@ packages = [{include = "github_repos_data_exploration"}]
 python = "^3.10"
 dbt-core = "^1.5.0"
 dbt-bigquery = "^1.5.0"
+pyspark = "^3.4.0"
 
 
 [tool.poetry.group.experiment.dependencies]
