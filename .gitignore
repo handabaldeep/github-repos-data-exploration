@@ -1,3 +1,6 @@
 .venv/
 logs/
 sample_data/
+test-scripts/
+service-account.json
+.user.yml
