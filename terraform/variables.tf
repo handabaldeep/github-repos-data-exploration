@@ -24,3 +24,9 @@ variable "bq_dataset" {
   type = string
   default = "github_repos_data_exploration_dataset"
 }
+
+variable "output_variables_file_path" {
+  description = "Path to the file to store output variables for reference"
+  type = string
+  default = "../vars.conf"
+}

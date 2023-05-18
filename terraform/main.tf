@@ -78,3 +78,18 @@ resource "google_dataproc_cluster" "dataproc_cluster" {
 
   }
 }
+
+locals {
+  output_variables = <<-EOT
+    [variables]
+    project = ${var.project_id}
+    data_lake_bucket_name = ${google_storage_bucket.data_lake_bucket.name}
+    bq_dataset = ${google_bigquery_dataset.bq_dataset.dataset_id}
+    dataproc_cluster = ${google_dataproc_cluster.dataproc_cluster.name}
+  EOT
+}
+
+resource "local_file" "postfix_config" {
+  filename = var.output_variables_file_path
+  content  = local.output_variables
+}
