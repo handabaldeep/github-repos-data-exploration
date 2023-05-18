@@ -1,6 +1,6 @@
 .venv/
 logs/
-sample_data/
+sample_data/output/
 test-scripts/
 service-account.json
 .user.yml
