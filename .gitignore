@@ -1,3 +1,15 @@
 .venv/
 logs/
-sample_data/
+sample_data/output/
+test-scripts/
+service-account.json
+.user.yml
+**target/
+**dbt_packages/
+**logs/
+**__pycache__/
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+vars.conf

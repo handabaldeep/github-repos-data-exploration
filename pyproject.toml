@@ -11,6 +11,8 @@ python = "^3.10"
 dbt-core = "^1.5.0"
 dbt-bigquery = "^1.5.0"
 pyspark = "^3.4.0"
+prefect = "^2.10.9"
+prefect-dbt = {extras = ["bigquery"], version = "^0.3.1"}
 
 
 [tool.poetry.group.experiment.dependencies]
