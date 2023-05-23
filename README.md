@@ -153,7 +153,7 @@ ELSE "Others"
 END
 ```
 
-2. Fro `Import statements`: added a new field `import_type` to indicate whether a `from` or `import`
+2. For `Import statements`: added a new field `import_type` to indicate whether a `from` or `import`
 syntax, and `package_name` field to extract the package name.
 
 ```
