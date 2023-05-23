@@ -1,3 +1,4 @@
+import configparser
 import sys
 
 from prefect_gcp import GcpCredentials, GcsBucket
@@ -17,4 +18,6 @@ def create_gcp_blocks(gcs_bucket: str) -> None:
 
 
 if __name__ == "__main__":
-    create_gcp_blocks(sys.argv[1])
+    config = configparser.ConfigParser()
+    config.read("vars.conf")
+    create_gcp_blocks(config["variables"]["data_lake_bucket_name"])
